@@ -1,0 +1,52 @@
+{
+  "selected_model": "gradient_boosting",
+  "train_rows": 8075,
+  "test_rows": 1925,
+  "test_start_date": "2026-05-25",
+  "holdout_metrics": {
+    "random_forest": {
+      "mae_m3": 1.8401,
+      "rmse_m3": 3.4296,
+      "r2": 0.933,
+      "rows": 1925
+    },
+    "gradient_boosting": {
+      "mae_m3": 1.7921,
+      "rmse_m3": 3.2768,
+      "r2": 0.9388,
+      "rows": 1925
+    }
+  },
+  "holdout_model_repair_metrics": {
+    "mae_m3": 1.6588,
+    "rmse_m3": 3.0064,
+    "r2": 0.9332,
+    "rows": 393
+  },
+  "audit": {
+    "total_rows": 10000,
+    "observed_kept": 7739,
+    "model_estimated": 2261,
+    "valid_labels_rejected_by_physical_check": 35,
+    "observed_exceeds_capacity": 346,
+    "final_capacity_violations": 0,
+    "audit_status_counts": {
+      "observed_valid": 7739,
+      "missing_estimated": 1508,
+      "incorrect_estimated": 718,
+      "valid_label_failed_capacity_check": 35
+    }
+  },
+  "features": [
+    "parcel_count",
+    "capacity_m3",
+    "trip_sequence",
+    "departure_hour",
+    "day_of_week",
+    "vehicle_model",
+    "parcel_category",
+    "origin_region",
+    "destination_region"
+  ],
+  "note": "Synthetic demo only. Ground truth is used for training and evaluation, never as an input feature. Holdout metrics refer to future dates; training-row predictions are in-sample. Capacity is treated as a hard physical bound for this demo."
+}

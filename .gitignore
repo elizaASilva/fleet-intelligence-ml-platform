@@ -12,3 +12,9 @@ data/private/
 *.parquet
 *.pkl
 *.joblib
+# Protect datasets by default
+*.csv
+
+# Allow synthetic demonstration datasets
+!data/synthetic/
+!data/synthetic/*.csv
